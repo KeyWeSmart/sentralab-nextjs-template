@@ -154,6 +154,16 @@ huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 
 예제에는 실제 서비스와 다국어 문구를 연결해야 합니다. 예제가 있다는 이유로 기능, 가짜 API나 데모 페이지를 추가하지 않습니다. 예제 화면은 기본 앱에 포함되어 있지 않습니다.
 
+### 추천 외부 Skill — 미설치
+
+다음 Skill은 **템플릿에 설치되어 있지 않지만**, 관련 기능을 개발할 때 활용을 권장합니다. 필요한 항목만 선택하고, 연결된 페이지에서 내용을 검토한 뒤 사용하는 에이전트 클라이언트에 맞게 별도로 등록합니다.
+
+- [**tanstack-query**](https://www.skills.sh/tanstack-skills/tanstack-skills/tanstack-query): TanStack Query로 서버 데이터 조회, 캐시, 재조회와 변경 요청을 구현하거나 검토할 때 권장합니다.
+- [**tanstack-table**](https://www.skills.sh/tanstack-skills/tanstack-skills/tanstack-table): TanStack Table 기반 데이터 테이블의 정렬, 필터, 페이지네이션, 열 구성과 행 선택을 구현할 때 권장합니다.
+- [**tanstack-virtual**](https://www.skills.sh/tanstack-skills/tanstack-skills/tanstack-virtual): 대규모 목록·그리드·테이블에서 화면에 보이는 항목 중심으로 렌더링하는 가상화가 필요할 때 권장합니다.
+
+라이브러리 설치와 에이전트 Skill 설치는 별개입니다. 이 권장 목록은 새 의존성이나 기능을 자동으로 추가하라는 의미가 아니며, 적용할 때는 프로젝트 요구사항과 [공통 우선순위 정책](.agents/frontend-skill-precedence.md)을 따릅니다.
+
 ### 출처와 업데이트
 
 [SentraLab 플러그인 레지스트리](https://github.com/KeyWeSmart/sentralab-agent-plugin-registry)의 다음 플러그인을 `vendor/sentralab-agent-plugin-registry/plugins/`에 원본 그대로 보관합니다.
