@@ -65,7 +65,7 @@ Skill은 패턴 적용 전에 이 파일을 읽도록 안내합니다. 다른 �
 
 이 Skill은 upstream에서 내려받은 파일이 아니라 템플릿이 소유하는 가이드입니다.
 파생 프로젝트는 요구사항에 맞춰 이 Skill과 프로젝트 규칙을 수정하거나 제거할 수
-있습니다. 루트 `AGENTS.md`, Vercel Skill, vendored SentraLab 플러그인을 수정할 필요는
+있습니다. 루트 `AGENTS.md`, Vercel Skill, 원본을 보존한 SentraLab Skill을 수정할 필요는
 없습니다. `skills-lock.json`은 CLI로 설치한 upstream Skill의 출처만 추적하며 이
 프로젝트 소유 Skill을 배포하거나 자동 업데이트하지 않습니다.
 

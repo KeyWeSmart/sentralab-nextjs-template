@@ -117,8 +117,7 @@ providers/        다국어와 Query Provider
 localization/     한국어 사전
 lib/              클래스 병합 유틸리티
 utils/            서버 전용 사전 로더
-.agents/          공통 에이전트 정책과 프로젝트 Skill
-vendor/           원본을 보존한 SentraLab 플러그인 복사본
+.agents/          공통 에이전트 정책과 직접 검색 가능한 Skill
 .husky/           Git 훅 원본
 huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 ```
@@ -136,7 +135,7 @@ huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 
 ## 에이전트와 함께 개발하기
 
-특정 에이전트나 클라이언트를 전제로 하지 않습니다. Skill의 등록·검색·호출은 사용하는 클라이언트의 지원 방식에 맞춥니다.
+특정 에이전트나 클라이언트를 전제로 하지 않습니다. 포함된 Skill은 `.agents/skills/<skill-name>/SKILL.md`에 있습니다. 이 경로를 자동 검색하지 않는 클라이언트에서는 필요한 Skill 경로를 지원되는 방식으로 연결합니다.
 
 ### 공통 정책과 구현 가이드
 
@@ -145,8 +144,8 @@ huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 프로젝트의 `sentralab-frontend-patterns` Skill은 이 정책을 먼저 읽도록 안내합니다. 다른 진입점에서는 클라이언트의 프로젝트 지침에 같은 파일을 참조하거나 작업 맥락에 포함합니다. `.agents/`에 파일이 있다는 사실만으로 모든 클라이언트가 자동으로 읽는다고 가정하지 않습니다.
 
 - [프런트엔드 패턴 사용 안내](.agents/skills/sentralab-frontend-patterns/README.md): 요청 방법과 예제 적용 범위.
-- [SentraLab UI/UX 사용 안내](vendor/sentralab-agent-plugin-registry/plugins/sentralab-web-frontend/skills/sentralab-react-ui-ux/README.md): 비동기 화면, 접근성, 초안 보호와 변경 요청의 안전성.
-- [Lantern 사용 안내](vendor/sentralab-agent-plugin-registry/plugins/sentralab-common/skills/lantern/README.md): 사람이 명시적으로 요청할 때 시작하는 요구사항 인터뷰.
+- [SentraLab UI/UX 사용 안내](.agents/skills/sentralab-react-ui-ux/README.md): 비동기 화면, 접근성, 초안 보호와 변경 요청의 안전성.
+- [Lantern 사용 안내](.agents/skills/lantern/README.md): 사람이 명시적으로 요청할 때 시작하는 요구사항 인터뷰.
 
 구현 예제의 에이전트용 상세 문서는 영어로 제공합니다. 필요한 주제만 선택해서 읽습니다.
 
@@ -164,17 +163,11 @@ huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 
 라이브러리 설치와 에이전트 Skill 설치는 별개입니다. 이 권장 목록은 새 의존성이나 기능을 자동으로 추가하라는 의미가 아니며, 적용할 때는 프로젝트 요구사항과 [공통 우선순위 정책](.agents/frontend-skill-precedence.md)을 따릅니다.
 
-### 출처와 업데이트
-
-[SentraLab 플러그인 레지스트리](https://github.com/KeyWeSmart/sentralab-agent-plugin-registry)의 다음 플러그인을 `vendor/sentralab-agent-plugin-registry/plugins/`에 원본 그대로 보관합니다.
-
-- `sentralab-common` **0.1.0**: Lantern.
-- `sentralab-web-frontend` **0.1.0**: `sentralab-react-ui-ux`.
-- 복사한 source revision: `a3f9e225034827080ff572c3b513b76d9ca28563`.
+### Skill 관리
 
 프로젝트가 직접 관리하는 `sentralab-frontend-patterns`와 공통 우선순위 정책은 파생 프로젝트에서 수정할 수 있습니다. Vercel Skill은 `.agents/skills/vercel-react-best-practices/`에 있으며, 출처와 콘텐츠 해시는 `skills-lock.json`이 기록합니다.
 
-복사본은 자동 업데이트되지 않습니다. 레지스트리 변경을 검토한 뒤 플러그인 전체를 교체하고, 출처 revision과 실제 Skill 검색 결과를 함께 확인합니다. 새 플러그인이 프로젝트와 같은 이름의 Skill을 포함한다면 레지스트리 사본과 로컬 변형 중 하나만 활성화합니다.
+Skill은 자동 업데이트되지 않습니다. 변경할 때는 해당 디렉터리의 부속 파일과 상대 경로를 함께 확인하고, 같은 이름의 Skill은 하나만 유지합니다.
 
 <details>
 <summary>Vercel Skill 설치 명령 참고</summary>
@@ -185,7 +178,7 @@ Vercel Skill의 프로젝트 로컬 설치 명령은 다음과 같습니다. 이
 npx --yes skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices --agent universal --yes
 ```
 
-Skill·플러그인은 사용하는 클라이언트가 지원하는 방식으로 연결합니다. 설치하거나 연결하는 것만으로 Lantern 인터뷰가 시작되지는 않습니다.
+설치 후에도 Skill은 사용하는 클라이언트가 지원하는 방식으로 검색·호출합니다. 설치하거나 연결하는 것만으로 Lantern 인터뷰가 시작되지는 않습니다.
 
 </details>
 

@@ -1,6 +1,0 @@
-{
-  "extensions": [
-    "./vendor/sentralab-agent-plugin-registry/plugins/sentralab-common",
-    "./vendor/sentralab-agent-plugin-registry/plugins/sentralab-web-frontend"
-  ]
-}
