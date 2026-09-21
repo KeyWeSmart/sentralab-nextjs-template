@@ -1,6 +1,6 @@
 ---
 name: sentralab-frontend-patterns
-description: Implement or review a requested SentraLab frontend feature using conditional examples for forms, lists, detail reads, mutations, dates, and file uploads, or assess a utility for template inclusion. Use when one of those patterns is needed in a project based on this template. Do not generate features, APIs, or product rules merely because an example exists.
+description: Implement or review a requested SentraLab frontend feature using guidance for localized routing, Next.js proxy/middleware, authentication, login/logout Server Actions, session cookies and refresh, forms, lists, detail reads, mutations, dates, and file uploads, or assess a utility for template inclusion. Use when one of these patterns is needed in a project based on this template. Do not generate features, APIs, or product rules merely because a reference exists.
 ---
 
 # SentraLab frontend patterns
@@ -19,7 +19,7 @@ The template has three layers:
 2. **Conditional playbook:** the references below; instantiate only the pattern
    needed by the requested feature. Examples are not starter application pages.
 3. **Product decisions:** requirements supplied by the project, not inferred from
-   Guardtec, GreetSchool, GreetAcademy, or this playbook.
+   another application or this playbook.
 
 Repeated code across products is evidence of a candidate, not proof of a shared
 requirement. Prefer familiar names and signatures when they are sound; fix
@@ -51,6 +51,12 @@ React task. Several references may apply to one feature.
 
 - [Pattern and utility adoption](references/adoption.md): deciding what belongs
   in executable baseline code versus guidance versus a particular product.
+- [Localized routing and Proxy](references/auth-routing.md): complete examples
+  for locale/route classification, safe return targets, and a thin `proxy.ts`.
+- [Sessions and authentication](references/auth-session.md): typed backend
+  boundaries, cookie rotation, login/logout Server Actions, authorization, and
+  identity transitions. Apply these examples only when the feature is requested;
+  do not install an auth scaffold merely because this reference exists.
 - [Forms](references/forms.md): RHF/Zod validation, native submission, and
   accessible field/save errors. A create form does not inherently need an
   existing-record fetch.

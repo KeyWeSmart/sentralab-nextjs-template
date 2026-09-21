@@ -3,8 +3,8 @@
 ## When to use
 
 Use when proposing a shared utility, component, behavior, or implementation
-pattern for this template. Also use when adapting code from GuardtecHikvision,
-GreetSchool, or GreetAcademy into a new project.
+pattern for this template. Also use when adapting an existing implementation
+into a new project.
 
 ## Do not use
 
@@ -83,7 +83,7 @@ a create form may have no existing-record read at all. See
 
 ### API parser or upload adapter: product integration
 
-Greet/SentraPass response envelopes, cookie names, payment masks, and upload
+Product-specific response envelopes, cookie names, payment masks, and upload
 endpoints are not generic utility contracts. Preserve a proven implementation
 technique, but connect it to the new project's actual API. Do not manufacture a
 universal service layer before its boundary is known.

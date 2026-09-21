@@ -177,7 +177,7 @@ export function formatTemporalValue(
 The exported API is `formatTemporalValue(value, options)`, plus its discriminated
 value/options types. Callers must pass options such as their localization
 locale, chosen display zone, translated fallback, and product-selected duration
-unit; the example does not declare a Sentinel time-zone default.
+unit; the example does not declare a project-wide time-zone default.
 
 ## Alternatives
 

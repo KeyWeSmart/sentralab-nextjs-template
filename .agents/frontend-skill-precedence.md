@@ -47,8 +47,9 @@ installed React/Next.js documentation and APIs.
 ## Bootstrap versus product behavior
 
 Read `.agents/skills/sentralab-frontend-patterns/SKILL.md` when a requested
-feature needs forms, lists, detail reads, mutations, dates, or file uploads, or
-when assessing a shared utility. Load only the relevant references.
+feature needs authentication, localized routing, Proxy, session cookies, forms,
+lists, detail reads, mutations, dates, or file uploads, or when assessing a shared
+utility. Load only the relevant references.
 
 - Repeated code is a reuse candidate, not proof of a universal requirement.
   Preserve familiar sound APIs; do not copy entire product utility directories.

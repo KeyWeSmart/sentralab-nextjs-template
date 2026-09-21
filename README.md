@@ -151,6 +151,8 @@ huskyhooks/       훅에서 사용하는 pnpm 탐색 로직
 
 [유틸리티 채택 기준](.agents/skills/sentralab-frontend-patterns/references/adoption.md) · [폼](.agents/skills/sentralab-frontend-patterns/references/forms.md) · [목록](.agents/skills/sentralab-frontend-patterns/references/lists.md) · [상세 조회](.agents/skills/sentralab-frontend-patterns/references/detail-reads.md) · [변경 요청](.agents/skills/sentralab-frontend-patterns/references/mutations.md) · [날짜·시간](.agents/skills/sentralab-frontend-patterns/references/date-time.md) · [파일 업로드](.agents/skills/sentralab-frontend-patterns/references/file-upload.md)
 
+[locale 라우팅과 Proxy](.agents/skills/sentralab-frontend-patterns/references/auth-routing.md) · [세션과 인증](.agents/skills/sentralab-frontend-patterns/references/auth-session.md): 경로 검증, `proxy.ts`, 쿠키 갱신, 로그인·로그아웃 Server Action과 서버 인가를 코드 예제로 제공합니다. 예제는 문서에만 있으며, 필요한 프로젝트에서 실제 백엔드 계약에 맞게 연결합니다.
+
 예제에는 실제 서비스와 다국어 문구를 연결해야 합니다. 예제가 있다는 이유로 기능, 가짜 API나 데모 페이지를 추가하지 않습니다. 예제 화면은 기본 앱에 포함되어 있지 않습니다.
 
 ### 추천 외부 Skill — 미설치
