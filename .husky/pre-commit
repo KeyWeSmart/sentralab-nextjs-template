@@ -1,0 +1,2 @@
+. ./huskyhooks/pnpm.sh
+run_pnpm biome

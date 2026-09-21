@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sentralab-web-frontend",
+  "version": "0.1.0",
+  "description": "Provides SentraLab conventions for implementing and reviewing React and Next.js web frontend interfaces.",
+  "author": {
+    "name": "SentraLab"
+  },
+  "repository": "https://github.com/KeyWeSmart/sentralab-agent-plugin-registry",
+  "keywords": [
+    "sentralab",
+    "react",
+    "nextjs",
+    "ui",
+    "ux",
+    "frontend",
+    "accessibility"
+  ]
+}

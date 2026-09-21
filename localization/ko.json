@@ -1,0 +1,9 @@
+{
+  "metadata": { "title": "Sentinel" },
+  "common": {
+    "ui": {
+      "close": "닫기",
+      "loading": "불러오는 중"
+    }
+  }
+}
