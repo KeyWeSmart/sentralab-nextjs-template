@@ -10,6 +10,8 @@ SentraLab 개발자가 익숙한 도구와 공통 UI 구성으로 새 프로젝�
 
 개발 기준 환경은 **Node.js 24.x**와 **pnpm 10.34.1**입니다. pnpm 버전은 `package.json`의 `packageManager`에 지정되어 있습니다. 사용 중인 Node 도구 체계나 사용 가능한 Corepack으로 해당 버전을 준비합니다.
 
+Next.js는 [2026년 10월 14일 보안 업데이트](https://nextjs.org/blog/nextjs-security-update-october-14-2026)가 적용된 **16.4.1**로 고정합니다. `pnpm-lock.yaml`에는 Next.js에서 사용하는 **sharp 0.35.5**가 함께 고정되어 있으므로 설치 시 lockfile을 유지합니다.
+
 템플릿을 복제하거나 새 프로젝트에 복사한 뒤, 프로젝트 루트에서 실행합니다.
 
 ```sh
